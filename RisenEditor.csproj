@@ -1,0 +1,476 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{19DD0B5A-51D2-4EA7-AA47-D2D81A014109}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RisenEditor</RootNamespace>
+    <AssemblyName>RisenEditor</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Icons\RisenFont.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="GameLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\GameLibrary_DX11\GameLibrary\bin\Release\GameLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="SlimDX, Version=2.0.13.43, Culture=neutral, PublicKeyToken=b1b0c32fd1ffe4f9, processorArchitecture=x86">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="zlib.net">
+      <HintPath>.\zlib.net.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xaml" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+    <Reference Include="WPFExtensions">
+      <HintPath>.\WPFExtensions.dll</HintPath>
+    </Reference>
+    <Reference Include="GraphSharp">
+      <HintPath>.\GraphSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="GraphSharp.Controls">
+      <HintPath>.\GraphSharp.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="QuickGraph">
+      <HintPath>.\QuickGraph.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App.cs" />
+    <Compile Include="Code\FileManager.cs" />
+    <Compile Include="Code\FileWrapper.cs" />
+    <Compile Include="Code\InfoWrapper.cs" />
+    <Compile Include="Code\LevelMeshConverter.cs" />
+    <Compile Include="Code\Loader\LrentImporter.cs" />
+    <Compile Include="Code\Loader\RisenPakFile.cs" />
+    <Compile Include="Code\Loader\ximgLoader.cs" />
+    <Compile Include="Code\Loader\XMACLoader.cs" />
+    <Compile Include="Code\Loader\XmatLoader.cs" />
+    <Compile Include="Code\Loader\XMOT.cs" />
+    <Compile Include="Code\Loader\XMSHLoader.cs" />
+    <Compile Include="Code\LrentWrappers.cs" />
+    <Compile Include="Code\Renderer\GrassNode.cs" />
+    <Compile Include="Code\Renderer\InformationDrawer.cs" />
+    <Compile Include="Code\Renderer\ObjRenderer.cs" />
+    <Compile Include="Code\Renderer\SpecialRenderer.cs" />
+    <Compile Include="Code\Renderer\UserConsole.cs" />
+    <Compile Include="Code\Risen FileSystem\gCCombatSpecies.cs" />
+    <Compile Include="Code\Risen FileSystem\gCFocus.cs" />
+    <Compile Include="Code\Risen FileSystem\gCInfo.cs" />
+    <Compile Include="Code\Risen FileSystem\GENOME_Base.cs" />
+    <Compile Include="Code\Risen FileSystem\GENOME_Files.cs" />
+    <Compile Include="Code\Risen FileSystem\LRENT_Base.cs" />
+    <Compile Include="Code\Risen FileSystem\REnums.cs" />
+    <Compile Include="Code\Risen FileSystem\tabFile.cs" />
+    <Compile Include="Code\Risen FileSystem\TpleFile.cs" />
+    <Compile Include="Code\Risen FileSystem\ximg.cs" />
+    <Compile Include="Code\Risen FileSystem\xMatClasses.cs" />
+    <Compile Include="Code\RisenMath.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UI\BatchForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\BatchForm.Designer.cs">
+      <DependentUpon>BatchForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CommandDisplay.xaml.cs">
+      <DependentUpon>CommandDisplay.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\entityControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\entityControl.Designer.cs">
+      <DependentUpon>entityControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\filterControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\filterControl.Designer.cs">
+      <DependentUpon>filterControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Helper Forms\AddColumnForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Helper Forms\AddColumnForm.Designer.cs">
+      <DependentUpon>AddColumnForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Helper Forms\NewInfoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Helper Forms\NewInfoForm.Designer.cs">
+      <DependentUpon>NewInfoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Helper Forms\NewTabForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Helper Forms\NewTabForm.Designer.cs">
+      <DependentUpon>NewTabForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ImageViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\ImageViewer.Designer.cs">
+      <DependentUpon>ImageViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\KeyManager.cs" />
+    <Compile Include="UI\MenuHelper.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\ModelViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\ModelViewer.Designer.cs">
+      <DependentUpon>ModelViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\newEntityControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\newEntityControl.Designer.cs">
+      <DependentUpon>newEntityControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\NewLrentWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\NewLrentWindow.Designer.cs">
+      <DependentUpon>NewLrentWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\NewWorldWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\NewWorldWindow.Designer.cs">
+      <DependentUpon>NewWorldWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\PakViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\PakViewer.Designer.cs">
+      <DependentUpon>PakViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\PoperContainer.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\PS Modifier\gCCollisionCircle_PS_Modifier.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\PS Modifier\gCCollisionCircle_PS_Modifier.Designer.cs">
+      <DependentUpon>gCCollisionCircle_PS_Modifier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\PS Modifier\gCDialog_PS_Modifier.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\PS Modifier\gCDialog_PS_Modifier.Designer.cs">
+      <DependentUpon>gCDialog_PS_Modifier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\PS Modifier\gCInventory_PS_Modifier.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\PS Modifier\gCInventory_PS_Modifier.Designer.cs">
+      <DependentUpon>gCInventory_PS_Modifier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\PS Modifier\gCItem_PS_Modifier.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\PS Modifier\gCItem_PS_Modifier.Designer.cs">
+      <DependentUpon>gCItem_PS_Modifier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\PS Modifier\gCNavigation_PS_Modifier.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\PS Modifier\gCNavigation_PS_Modifier.Designer.cs">
+      <DependentUpon>gCNavigation_PS_Modifier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\PS Modifier\gCNavZone_PS_Modifier.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\PS Modifier\gCNavZone_PS_Modifier.Designer.cs">
+      <DependentUpon>gCNavZone_PS_Modifier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\PS Modifier\gCPrefPath_PS_Modifier.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\PS Modifier\gCPrefPath_PS_Modifier.Designer.cs">
+      <DependentUpon>gCPrefPath_PS_Modifier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\PS Modifier\gCSectorPersistence_PS_Modifier.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\PS Modifier\gCSectorPersistence_PS_Modifier.Designer.cs">
+      <DependentUpon>gCSectorPersistence_PS_Modifier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\PS Modifier\PS_Modifier.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\SceneControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\SceneControl.Designer.cs">
+      <DependentUpon>SceneControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\subSceneControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\subSceneControl.Designer.cs">
+      <DependentUpon>subSceneControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\TabViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\TabViewer.Designer.cs">
+      <DependentUpon>TabViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\VertexDisplay.xaml.cs">
+      <DependentUpon>VertexDisplay.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\xInfoElement.xaml.cs">
+      <DependentUpon>xInfoElement.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\xmshControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\xmshControl.Designer.cs">
+      <DependentUpon>xmshControl.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="UI\entityControl.resx">
+      <DependentUpon>entityControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\filterControl.resx">
+      <DependentUpon>filterControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Helper Forms\AddColumnForm.resx">
+      <DependentUpon>AddColumnForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Helper Forms\NewInfoForm.resx">
+      <DependentUpon>NewInfoForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Helper Forms\NewTabForm.resx">
+      <DependentUpon>NewTabForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ImageViewer.resx">
+      <DependentUpon>ImageViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ModelViewer.resx">
+      <DependentUpon>ModelViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\newEntityControl.resx">
+      <DependentUpon>newEntityControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\NewLrentWindow.resx">
+      <DependentUpon>NewLrentWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\NewWorldWindow.resx">
+      <DependentUpon>NewWorldWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\PakViewer.resx">
+      <DependentUpon>PakViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\PS Modifier\gCCollisionCircle_PS_Modifier.resx">
+      <DependentUpon>gCCollisionCircle_PS_Modifier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\PS Modifier\gCDialog_PS_Modifier.resx">
+      <DependentUpon>gCDialog_PS_Modifier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\PS Modifier\gCInventory_PS_Modifier.resx">
+      <DependentUpon>gCInventory_PS_Modifier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\PS Modifier\gCItem_PS_Modifier.resx">
+      <DependentUpon>gCItem_PS_Modifier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\PS Modifier\gCNavigation_PS_Modifier.resx">
+      <DependentUpon>gCNavigation_PS_Modifier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\PS Modifier\gCNavZone_PS_Modifier.resx">
+      <DependentUpon>gCNavZone_PS_Modifier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\PS Modifier\gCPrefPath_PS_Modifier.resx">
+      <DependentUpon>gCPrefPath_PS_Modifier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\PS Modifier\gCSectorPersistence_PS_Modifier.resx">
+      <DependentUpon>gCSectorPersistence_PS_Modifier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\SceneControl.resx">
+      <DependentUpon>SceneControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\subSceneControl.resx">
+      <DependentUpon>subSceneControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\TabViewer.resx">
+      <DependentUpon>TabViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\xmshControl.resx">
+      <DependentUpon>xmshControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="UI\CommandDisplay.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UI\VertexDisplay.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UI\xInfoElement.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RisenEditorWin32Interop\RisenEditorWin32Interop.vcxproj">
+      <Project>{B8A8D0D5-309A-43FD-BA15-4FE9D3A2D62A}</Project>
+      <Name>RisenEditorWin32Interop</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\conslRect.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\console.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\GothicFont.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\lrentIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\open_file-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\RisenFont.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\secIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\shown_01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\shown_11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\wrlIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 und x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\save.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

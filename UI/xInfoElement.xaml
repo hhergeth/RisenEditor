@@ -1,0 +1,69 @@
+﻿<UserControl x:Class="RisenEditor.UI.xInfoElement"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:graphsharp="clr-namespace:GraphSharp.Controls;assembly=GraphSharp.Controls"
+             xmlns:zoom="clr-namespace:WPFExtensions.Controls;assembly=WPFExtensions"
+             xmlns:myns="clr-namespace:RisenEditor.Code"
+             xmlns:mynd="clr-namespace:RisenEditor.UI"
+             xmlns:wf="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="643" d:DesignWidth="521">
+    <UserControl.Resources>
+        <DataTemplate DataType="{x:Type myns:InfoWrapper}">
+            <mynd:VertexDisplay DataContext="{Binding Path=abs}"> </mynd:VertexDisplay>
+        </DataTemplate>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="238*" />
+            <RowDefinition Height="62*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100*" />
+            <ColumnDefinition Width="200*" />
+        </Grid.ColumnDefinitions>
+        <zoom:ZoomControl Grid.Column="1" Grid.RowSpan="1">
+            <graphsharp:GraphLayout x:Name="graphLayout1" OverlapRemovalAlgorithmType="FSA" LayoutAlgorithmType="FR" HighlightAlgorithmType="Simple" AsyncCompute="False" ShowAllStates="false" > 
+            </graphsharp:GraphLayout>
+        </zoom:ZoomControl>
+        <Grid Name="grid2" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="180*" />
+                <RowDefinition Height="58*" />
+            </Grid.RowDefinitions>
+            
+            <GroupBox Grid.Row="1" Header="Filter"  Name="groupBox1">
+                <Grid>
+                    <Label Content="Owner" Height="28" HorizontalAlignment="Left" Margin="6,6,0,0" Name="label1" VerticalAlignment="Top" />
+                    <TextBox Height="23" HorizontalAlignment="Left" Margin="60,8,0,0" Name="textBox1" VerticalAlignment="Top" Width="96" TextChanged="textBox1_TextChanged" />
+                    <Label Content="Quest" Height="28" HorizontalAlignment="Left" Margin="6,36,0,0" Name="label2" VerticalAlignment="Top" />
+                    <TextBox Height="23" HorizontalAlignment="Left" Margin="60,41,0,0" Name="textBox2" VerticalAlignment="Top" Width="96" TextChanged="textBox1_TextChanged" />
+                    <Label Content="Name" Height="28" HorizontalAlignment="Left" Margin="6,67,0,0" Name="label3" VerticalAlignment="Top" />
+                    <TextBox Height="23" HorizontalAlignment="Left" Margin="60,72,0,0" Name="textBox3" VerticalAlignment="Top" Width="96" TextChanged="textBox1_TextChanged"/>
+                </Grid>
+            </GroupBox>
+            <TabControl Name="tabControl1" >
+                <TabItem Header="Xinfos" Name="tabItem1">
+                    <Grid>
+                        <ListView Name="listView1" SelectionChanged="listView1_SelectionChanged"  />
+                    </Grid>      
+                </TabItem>
+                <TabItem Header="Properties" Name="tabItem2">
+                    <Grid>
+                        <WindowsFormsHost Name="windowsFormsHost2">
+                            <wf:PropertyGrid Name="propertygrid2" ToolbarVisible="False"></wf:PropertyGrid>
+                        </WindowsFormsHost>
+                    </Grid>
+                </TabItem>
+            </TabControl>
+        </Grid>
+        <WindowsFormsHost Grid.Column="1" Grid.Row="1" Name="windowsFormsHost1" >
+            <wf:PropertyGrid Name="propertygrid1" ToolbarVisible="False"></wf:PropertyGrid>
+        </WindowsFormsHost>
+        <Button Content="Save" Grid.Row="1" Height="23" HorizontalAlignment="Left" Margin="21,30,0,0" Name="button1" VerticalAlignment="Top" Width="75" Click="button1_Click" />
+        <Button Content="New
+                " Grid.Row="1" Height="23" HorizontalAlignment="Left" Margin="42,88,0,0" Name="button2" VerticalAlignment="Top" Width="75" Click="button2_Click" />
+    </Grid>
+</UserControl>
